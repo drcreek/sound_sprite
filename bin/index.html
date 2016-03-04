@@ -76,7 +76,7 @@ SoundSpriteExample.prototype = {
 		this._redBallBouncingFlag = !this._redBallBouncingFlag;
 	}
 	,startButtonHandler: function(e) {
-		this._soundSpriteUtility.set_src("sound_sprite");
+		this._soundSpriteUtility.set_src("http://46.101.6.194:8000/DukeBox1");
 		this._startButton.style.visibility = "hidden";
 	}
 	,playSooubleBeepSound: function() {
@@ -426,7 +426,7 @@ util.SoundSpriteUtility.prototype = {
 	}
 	,set_src: function(value) {
 		this._src = value;
-		if(this._sound.canPlayType("audio/mp4") == "maybe") this._sound.src = this._src + ".mp3"; else this._sound.src = this._src + ".ogg";
+		if(this._sound.canPlayType("audio/mp4") == "maybe") this._sound.src = this._src + ".m3u"; else this._sound.src = this._src + ".m3u";
 		this._sound.addEventListener("timeupdate",$bind(this,this.timeUpdateHandler));
 		this._timer = new haxe.Timer(10);
 		this._timer.run = $bind(this,this.timerHandler);
